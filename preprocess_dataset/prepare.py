@@ -1,8 +1,8 @@
 from collections import Counter
-from dataio import load_data_to_df
-from split import stratified_split
-from vectorize import vectorize_fit_transform
-from encode import encode_labels
+from .dataio import load_data_to_df
+from .split import stratified_split
+from .vectorize import vectorize_fit_transform
+from .encode import encode_labels
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import LabelEncoder
 
@@ -13,11 +13,19 @@ def summarize_labels(y_train, y_test):
 
     print(f"Train: total={len(y_train)}, unique={len(train_counts)}, counts={train_counts}")
     print(f"Test:  total={len(y_test)}, unique={len(test_counts)}, counts={test_counts}")
+    print('-----#####-----\n')
 
     return train_counts, test_counts
 
 def prepare_dataset(path):
     df = load_data_to_df(path)
+
+    # Ensure stratified split works: drop labels with <2 samples
+    label_counts = df['label'].value_counts()
+    insufficient = label_counts[label_counts < 2]
+    if not insufficient.empty:
+        df = df[df['label'].isin(label_counts[label_counts >= 2].index)].reset_index(drop=True)
+        print(f"Dropped {len(insufficient)} label(s) with <2 samples: {list(insufficient.index)}")
 
     # split the dataset into train test
     x_train, x_test, y_train, y_test = stratified_split(df, test_size=0.15)
@@ -36,11 +44,8 @@ def prepare_dataset(path):
     return {'x_train': x_train_transformed, 
             'x_test': x_test_transformed,
             'y_train': y_train_encoded,
-            'y_test': y_test_encoded}
+            'y_test': y_test_encoded,
+            'encoder': encoder}
 
 if __name__ == '__main__':
-    prepare_dataset('dialog_acts_lower.dat')
-
-    print('a')
-
-
+    prepare_dataset('datasets/dialog_acts_deduplicated.dat')
