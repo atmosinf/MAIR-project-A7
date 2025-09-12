@@ -93,7 +93,7 @@ def start_up_ui(x_test: list, y_test: list):
 
 if __name__ == "__main__":
     # Path to 'dialog_acts.dat' file
-    file_path = "data/dialog_acts.dat"
+    file_path = "./datasets/dialog_acts.dat"
 
     # List for feature and target
     labels = []
