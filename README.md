@@ -2,6 +2,23 @@
 
 Project for dialog act classification with simple data prep utilities and a training CLI.
 
+# Baseline Models
+All code for this part can be found in `baseline_models_code`.
+
+## Quick Start
+Run `baseline_models_code/main.py`.<br>
+This wil start a Terminal UI with three input options:
+- `file`: Run both baseline models on `datasets/dialog_acts.dat` and shows metric scores.
+- `try me`: User inputs utterance for the Rule Based Baseline model to classify and gives prediction on given utterance.
+- `exit`: Stop script.
+
+## Files (`baseline_models_code/.`)
+- `main.py`: Main file where data is preperred for baseline models, predictions are executed and terminal UI code can be found.
+- `baseline_inform.py`: Class file for the Baseline model that always classifies utterances as 'inform'.
+- `baseline_rulebased.py`: Class file for the Baseline model that classifies utterances based on keyword.
+
+# Machine Learning models
+
 ## Quick Start
 - Default (logistic regression): `python train.py`
 - Select model: `python train.py --model decision_tree`
