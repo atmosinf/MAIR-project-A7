@@ -1,5 +1,5 @@
 class BaselineInform:
-    def predict(self, data):
+    def predict(self, data: list) -> list:
         """
         Predict the given data using the classification algorithm.
         """
