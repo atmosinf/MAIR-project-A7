@@ -10,7 +10,7 @@ All code for this part can be found in `baseline_models_code`.
 
 ## Quick Start
 Run `baseline_models_code/main.py`.<br>
-This wil start a Terminal UI with three input options:
+This will start a Terminal UI with three input options:
 - `file`: Run both baseline models on `datasets/dialog_acts.dat` and shows metric scores.
 - `try me`: User inputs utterance for the Rule Based Baseline model to classify and gives prediction on given utterance.
 - `exit`: Stop script.
