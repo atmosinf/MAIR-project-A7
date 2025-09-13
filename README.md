@@ -16,7 +16,7 @@ This will start a Terminal UI with three input options:
 - `exit`: Stop script.
 
 ## Files (`baseline_models_code/.`)
-- `main.py`: Main file where data is preperred for baseline models, predictions are executed and terminal UI code can be found.
+- `main.py`: Main file where data is prepared for baseline models, predictions are executed and terminal UI code can be found.
 - `baseline_inform.py`: Class file for the Baseline model that always classifies utterances as 'inform'.
 - `baseline_rulebased.py`: Class file for the Baseline model that classifies utterances based on keyword.
 
