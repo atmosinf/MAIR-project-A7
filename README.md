@@ -37,6 +37,8 @@ This wil start a Terminal UI with three input options:
   - `dialog_acts.dat`: Original dataset (label + utterance per line).
   - `dialog_acts_lower.dat`: Lowercased version of the dataset.
   - `dialog_acts_deduplicated.dat`: Deduplicated dataset (removed duplicate utterances).
+  - `difficult_cases_multiple.dat`: Dataset with difficult cases where multiple dialog acts are present in one utterance.
+  - `difficult_cases_negation.dat`: Dataset with difficult cases that contain negation but are different dialog acts.
 
 ## Data Prep Module (`preprocess_dataset/`)
 - `__init__.py`: Re-exports helpers for convenient import.
