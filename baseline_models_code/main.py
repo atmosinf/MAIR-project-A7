@@ -20,7 +20,7 @@ def calc_metrics(model_name: str, y_true: list, y_pred: list):
     print("\nAccuracy:", accuracy_score(y_true, y_pred))
 
     # calculate and print precision, recall and f1-score
-    print("\nClassifiaction Report:\n", classification_report(y_true, y_pred, zero_division=0))
+    print("\nClassification Report:\n", classification_report(y_true, y_pred, zero_division=0))
 
     # calculate and print cunfusion matrix
     cm = confusion_matrix(y_true, y_pred)
