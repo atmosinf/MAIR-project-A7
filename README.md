@@ -3,7 +3,7 @@
 Project for dialog act classification with simple data prep utilities and a training CLI.
 
 # Getting Started
-Before running any code, please install the right packages by runnen `pip install -r requirements.txt`.
+Before running any code, please install the right packages by running `pip install -r requirements.txt`.
 
 # Baseline Models
 All code for this part can be found in `baseline_models_code`.
