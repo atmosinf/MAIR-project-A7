@@ -89,7 +89,7 @@ def start_up_ui(x_test: list, y_test: list):
     # Exit the program
     else:
         print("You're shutting me down...")
-        exit
+        exit()
 
 if __name__ == "__main__":
     # Path to 'dialog_acts.dat' file
