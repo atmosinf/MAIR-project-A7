@@ -2,6 +2,26 @@
 
 Project for dialog act classification with simple data prep utilities and a training CLI.
 
+# Getting Started
+Before running any code, please install the right packages by running `pip install -r requirements.txt`.
+
+# Baseline Models
+All code for this part can be found in `baseline_models_code`.
+
+## Quick Start
+Run `baseline_models_code/main.py`.<br>
+This will start a Terminal UI with three input options:
+- `file`: Run both baseline models on `datasets/dialog_acts.dat` and shows metric scores.
+- `try me`: User inputs utterance for the Rule Based Baseline model to classify and gives prediction on given utterance.
+- `exit`: Stop script.
+
+## Files (`baseline_models_code/.`)
+- `main.py`: Main file where data is prepared for baseline models, predictions are executed and terminal UI code can be found.
+- `baseline_inform.py`: Class file for the Baseline model that always classifies utterances as 'inform'.
+- `baseline_rulebased.py`: Class file for the Baseline model that classifies utterances based on keyword.
+
+# Machine Learning models
+
 ## Quick Start
 - Default (logistic regression): `python train.py`
 - Select model: `python train.py --model decision_tree`
@@ -20,6 +40,8 @@ Project for dialog act classification with simple data prep utilities and a trai
   - `dialog_acts.dat`: Original dataset (label + utterance per line).
   - `dialog_acts_lower.dat`: Lowercased version of the dataset.
   - `dialog_acts_deduplicated.dat`: Deduplicated dataset (removed duplicate utterances).
+  - `difficult_cases_multiple.dat`: Dataset with difficult cases where multiple dialog acts are present in one utterance.
+  - `difficult_cases_negation.dat`: Dataset with difficult cases that contain negation but are different dialog acts.
 
 ## Data Prep Module (`preprocess_dataset/`)
 - `__init__.py`: Re-exports helpers for convenient import.
